@@ -95,8 +95,8 @@ angular.module('ui.mask', [])
                                 if (value === '' && iAttrs.required) {
                                     controller.$setValidity('required', !controller.$error.required);
                                 }
-                                
-                                value = scope.$eval(iAttrs.uiMaskClean) ? value : fromViewValue;
+
+                                value = scope.$eval(iAttrs.uiMaskClean) ? value : fromViewValue.replace(/([_]+)$/g, '');
                                 
                                 return isValid ? value : undefined;
                             }
