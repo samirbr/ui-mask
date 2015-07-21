@@ -407,7 +407,7 @@ angular.module('ui.mask', [])
                                 oldValueUnmasked = valUnmasked;
                                 iElement.val(valMasked);
                                 if (valAltered) {
-                                    var clean = scope.$eval(iAttrs.uiMaskClean) || true;
+                                    var clean = scope.$eval(iAttrs.uiMaskClean);
                                     // We've altered the raw value after it's been $digest'ed, we need to $apply the new value.
                                     scope.$apply(function() {
                                         controller.$setViewValue(clean ? valUnmasked : valMasked);
